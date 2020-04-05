@@ -74,7 +74,10 @@ class DataHeaderFooter: UICollectionReusableView {
         self.titleLabel.text = viewModel.data
         self.sortingImageView.image = viewModel.imageForSortingElement
         self.sortingImageView.tintColor = viewModel.tintColorForSortingElement
-        self.backgroundColor = .white
+        self.backgroundColor = viewModel.backgroundColor
+        self.titleLabel.textColor = viewModel.titleColor
+        self.titleLabel.backgroundColor = .clear
+        self.titleLabel.font = viewModel.font
     }
     @objc func didTapView(){
         self.didTapEvent?()
