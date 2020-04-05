@@ -35,18 +35,31 @@ public struct DataTableConfiguration: Equatable {
     public var shouldShowVerticalScrollBars: Bool = true
     public var shouldShowHorizontalScrollBars: Bool = false
 
-    public var sortArrowTintColor: UIColor = UIColor.blue
+    public var sortArrowTintColor: UIColor = UIColor.black
     
     public var shouldSupportRightToLeftInterfaceDirection: Bool = true
     
     public var highlightedAlternatingRowColors = [
-        UIColor(red: 0.941, green: 0.941, blue: 0.941, alpha: 1),
-        UIColor(red: 0.9725, green: 0.9725, blue: 0.9725, alpha: 1)
+        UIColor.white
     ]
     public var unhighlightedAlternatingRowColors = [
-        UIColor(red: 0.9725, green: 0.9725, blue: 0.9725, alpha: 1),
-        .white
+        UIColor.white
     ]
+    public var cellTextColor = UIColor.black
+
+    public var headerBackgroundColor = UIColor.white
+
+    public var selectedHeaderBackgroundColor = UIColor.blue
+
+    public var headerTextColor = UIColor.black
+
+    public var selectedHeaderTextColor = UIColor.black
+
+    public var cellSeparatorColor = UIColor.gray
+    
+    public var cellFont = UIFont.systemFont(ofSize: 14)
+
+    public var headerFont = UIFont.systemFont(ofSize: 14)
     
     public var fixedColumns: DataTableFixedColumnType? = nil
     

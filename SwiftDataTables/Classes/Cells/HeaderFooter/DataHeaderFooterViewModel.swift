@@ -50,6 +50,24 @@ public class DataHeaderFooterViewModel: DataTableSortable {
         return (dataTable != nil && sortType != .unspecified) ? dataTable.options.sortArrowTintColor : UIColor.gray
     }
     
+    var backgroundColor: UIColor? {
+        guard let _ = dataTable else {
+            return .gray
+        }
+        return (sortType != .unspecified) ? dataTable.options.selectedHeaderBackgroundColor : dataTable.options.headerBackgroundColor
+    }
+
+    var titleColor: UIColor? {
+        guard let _ = dataTable else {
+            return .gray
+        }
+        return (sortType != .unspecified) ? dataTable.options.selectedHeaderTextColor : dataTable.options.headerTextColor
+    }
+    
+    var font: UIFont? {
+        return dataTable != nil ? dataTable.options.headerFont : UIFont.systemFont(ofSize: 14)
+    }
+    
     //MARK: - Events
     
     //MARK: - Lifecycle
