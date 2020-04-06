@@ -688,7 +688,7 @@ extension SwiftDataTable {
     
     
     func minimumColumnWidth() -> CGFloat {
-        return 70
+        return 90
     }
     
     func minimumHeaderColumnWidth(index: Int) -> CGFloat {
@@ -697,7 +697,7 @@ extension SwiftDataTable {
     
     //There should be an automated way to retrieve the font size of the cell
     func pixelsPerCharacter() -> CGFloat {
-        return 14
+        return 9
     }
     
     func heightForPaginationView() -> CGFloat {

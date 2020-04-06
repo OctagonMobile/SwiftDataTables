@@ -13,7 +13,7 @@ class DataCell: UICollectionViewCell {
     //MARK: - Properties
     private enum Properties {
         static let verticalMargin: CGFloat = 0
-        static let horizontalMargin: CGFloat = 15
+        static let horizontalMargin: CGFloat = 5
         static let widthConstant: CGFloat = 20
     }
     
