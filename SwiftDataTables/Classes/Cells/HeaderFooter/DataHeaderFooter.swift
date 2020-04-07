@@ -15,7 +15,7 @@ class DataHeaderFooter: UICollectionReusableView {
         static let labelHorizontalMargin: CGFloat = 15
         static let labelVerticalMargin: CGFloat = 5
         static let separator: CGFloat = 5
-        static let imageViewHorizontalMargin: CGFloat = 5
+        static let imageViewHorizontalMargin: CGFloat = -10
         static let labelWidthConstant: CGFloat = 20
         static let imageViewWidthConstant: CGFloat = 20
         static let imageViewAspectRatio: CGFloat = 0.75
