@@ -12,7 +12,7 @@ class DataHeaderFooter: UICollectionReusableView {
 
     //MARK: - Properties
     private enum Properties {
-        static let labelHorizontalMargin: CGFloat = 5
+        static let labelHorizontalMargin: CGFloat = 10
         static let labelVerticalMargin: CGFloat = 5
         static let separator: CGFloat = 5
         static let imageViewHorizontalMargin: CGFloat = 5
@@ -46,7 +46,7 @@ class DataHeaderFooter: UICollectionReusableView {
     }
     
     func setupViews() {
-        titleLabel.adjustsFontSizeToFitWidth = true
+        titleLabel.adjustsFontSizeToFitWidth = false
         titleLabel.font = UIFont.systemFont(ofSize: 17, weight: .heavy)
         addSubview(titleLabel)
         addSubview(sortingImageView)
