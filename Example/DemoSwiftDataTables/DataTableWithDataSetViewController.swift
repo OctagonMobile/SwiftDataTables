@@ -40,6 +40,7 @@ extension DataTableWithDataSetViewController {
         var options = DataTableConfiguration()
         options.shouldContentWidthScaleToFillFrame = false
         options.defaultOrdering = DataTableColumnOrder(index: 1, order: .ascending)
+//        options.enableSort = false
         return options
     }
     func makeDataTable() -> SwiftDataTable {

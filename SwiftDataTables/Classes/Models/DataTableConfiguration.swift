@@ -63,6 +63,8 @@ public struct DataTableConfiguration: Equatable {
     
     public var fixedColumns: DataTableFixedColumnType? = nil
     
+    public var enableSort = true
+    
     public init(){
         
     }

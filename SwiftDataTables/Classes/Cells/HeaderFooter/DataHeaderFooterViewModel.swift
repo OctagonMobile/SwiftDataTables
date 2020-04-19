@@ -47,25 +47,29 @@ public class DataHeaderFooterViewModel: DataTableSortable {
         return image
     }
     var tintColorForSortingElement: UIColor? {
-        return (dataTable != nil && sortType != .unspecified) ? dataTable.options.sortArrowTintColor : UIColor.gray
+        return (dataTable != nil && sortType != .unspecified && isSortingEnabled) ? dataTable.options.sortArrowTintColor : UIColor.gray
     }
     
     var backgroundColor: UIColor? {
         guard let _ = dataTable else {
             return .gray
         }
-        return (sortType != .unspecified) ? dataTable.options.selectedHeaderBackgroundColor : dataTable.options.headerBackgroundColor
+        return (sortType != .unspecified && isSortingEnabled) ? dataTable.options.selectedHeaderBackgroundColor : dataTable.options.headerBackgroundColor
     }
 
     var titleColor: UIColor? {
         guard let _ = dataTable else {
             return .gray
         }
-        return (sortType != .unspecified) ? dataTable.options.selectedHeaderTextColor : dataTable.options.headerTextColor
+        return (sortType != .unspecified && isSortingEnabled) ? dataTable.options.selectedHeaderTextColor : dataTable.options.headerTextColor
     }
     
     var font: UIFont? {
         return dataTable != nil ? dataTable.options.headerFont : UIFont.systemFont(ofSize: 14)
+    }
+    
+    var isSortingEnabled: Bool {
+        return dataTable != nil ? dataTable.options.enableSort : true
     }
     
     //MARK: - Events
@@ -114,6 +118,8 @@ extension DataHeaderFooterViewModel: CollectionViewSupplementaryElementRepresent
     
     //MARK: - Events
     func headerViewDidTap(){
-        self.dataTable.didTapColumn(index: self.indexPath)
+        if isSortingEnabled {
+            self.dataTable.didTapColumn(index: self.indexPath)
+        }
     }
 }
