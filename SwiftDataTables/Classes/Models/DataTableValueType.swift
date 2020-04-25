@@ -15,20 +15,20 @@ public enum DataTableValueType {
     
     //MARK: - Properties
     case string(String, Any? = nil)
-    case int(Int)
-    case float(Float)
-    case double(Double)
+    case int(Int, Any? = nil)
+    case float(Float, Any? = nil)
+    case double(Double, Any? = nil)
     
     public var stringRepresentation: String {
         get {
             switch self {
             case .string(let value, _):
                 return String(value)
-            case .int(let value):
+            case .int(let value, _):
                 return String(value)
-            case .float(let value):
+            case .float(let value, _):
                 return String(value)
-            case .double(let value):
+            case .double(let value, _):
                 return String(value)
             }
         }
@@ -69,11 +69,11 @@ extension DataTableValueType: Comparable {
         switch (lhs, rhs) {
         case (.string(let lhsValue, _), .string(let rhsValue, _)):
             return lhsValue < rhsValue
-        case (.int(let lhsValue), .int(let rhsValue)):
+        case (.int(let lhsValue, _), .int(let rhsValue, _)):
             return lhsValue < rhsValue
-        case (.float(let lhsValue), .float(let rhsValue)):
+        case (.float(let lhsValue, _), .float(let rhsValue, _)):
             return lhsValue < rhsValue
-        case (.double(let lhsValue), .double(let rhsValue)):
+        case (.double(let lhsValue, _), .double(let rhsValue, _)):
             return lhsValue < rhsValue
         default:
             return lhs.stringRepresentation < rhs.stringRepresentation
