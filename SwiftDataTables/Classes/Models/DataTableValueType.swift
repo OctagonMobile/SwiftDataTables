@@ -24,12 +24,12 @@ public enum DataTableValueType {
             switch self {
             case .string(let value, _):
                 return String(value)
-            case .int(let value, _):
-                return String(value)
-            case .float(let value, _):
-                return String(value)
-            case .double(let value, _):
-                return String(value)
+            case .int(let value):
+                return Formatter.withSeparator.string(for: value) ?? ""
+            case .float(let value):
+                return Formatter.withSeparator.string(for: value) ?? ""
+            case .double(let value):
+                return Formatter.withSeparator.string(for: value) ?? ""
             }
         }
     }
