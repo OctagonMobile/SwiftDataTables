@@ -24,11 +24,11 @@ public enum DataTableValueType {
             switch self {
             case .string(let value, _):
                 return String(value)
-            case .int(let value):
+            case .int(let value, _):
                 return Formatter.withSeparator.string(for: value) ?? ""
-            case .float(let value):
+            case .float(let value, _):
                 return Formatter.withSeparator.string(for: value) ?? ""
-            case .double(let value):
+            case .double(let value, _):
                 return Formatter.withSeparator.string(for: value) ?? ""
             }
         }
